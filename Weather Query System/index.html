@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>WeatherMap</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="toasts"></div>
+
+    <div class="header">
+        <div class="title">☁️ Weather Forecast System</div>
+        <button class="top">返回顶部</button>
+    </div>
+    <div class="search">
+        <div class="tips"></div>
+        <div class="wrapper">
+            <div class="input-data">
+                <input type="text" class="city-name-search" required>
+                <div class="underline"></div>
+                <label>输入想要查询的城市吧</label>
+                <button class="btn-search">查询</button>
+            </div>
+        </div>
+        <!-- <div class="flex-box">
+            <input type="text" class="city-name-search" id="key-box" placeholder="输入想要查询的城市吧"><button
+                class="btn-search">查询</button>
+        </div> -->
+    </div>
+    <div class="inf">
+        <div class="name"></div>
+        <div class="bodies">
+            <div class="one-day">
+                <div class="box">
+                    <div class="weather-inform">
+                        <img src="" alt="天气图标" class="weather-logo">
+                        <div class="text">
+                            <div class="date"></div>
+                            <div class="first">
+                                <div class="now-tem"></div>
+                                <div class="weather-type"></div>
+                            </div>
+                            <div class="second">
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="third">
+                                <img src="./img/风.png" class="l-logo">
+                                <div class="win"></div>
+                                <img src="./img/风强.png" class="l-logo">
+                                <div class="win-level"></div>
+                                <img src="./img/风速.png" class="l-logo">
+                                <div class="win-speed"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="air-inform">
+                        <div class="air-title">空气质量指数</div>
+                        <div class="air-text">
+                            <div class="circle">50</div>
+                            <div class="flex">
+                                <div class="air-level">良</div>
+                                <div class="air-tip">少数易敏感人群应减少户外运动。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="week">
+                        <div class="air-title">
+                            未来6天天气预测
+                        </div>
+                        <div class="p">
+                            <div class="w-date">日期</div>
+                            <div class="type">天气类型</div>
+                            <div class="day-tem">白天气温</div>
+                            <div class="night-tem">夜晚气温</div>
+                        </div>
+                        <div class="w-box">
+                            <div class="p0">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="p1">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="p2">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="p3">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="p4">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="p5">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                            <div class="p6">
+                                <div class="w-date"></div>
+                                <div class="type"></div>
+                                <div class="day-tem"></div>
+                                <div class="night-tem"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="map">
+                        <div class="air-title">定位地图</div>
+                        <div id="container"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="live">
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                    <div class="live-level">
+                        <div class="live-name"></div>
+                        <div class="level"></div>
+                        <div class="text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            数据支持：
+            @<a href="https://www.tianqiapi.com/index/doc?version=day" target="_blank">实况天气接口</a>,
+            @<a href="https://dev.qweather.com/docs/api/indices/" target="_blank">生活指数接口</a>,
+            @<a href="https://www.tianqiapi.com/index/doc?version=week" target="_blank">七日天气接口</a>,
+        </div>
+    </div>
+
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=mqUFXmtBBb9FreWP8saSHWkyeI2n8I4f"></script>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
